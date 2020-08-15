@@ -1,0 +1,18 @@
+{
+    "private": "true",
+    "name": "helper",
+    "version": "0.0.1",
+    "description": "helper functions",
+    "scripts": {
+        "watch": "node-sass public/assets/scss --watch --recursive --output public/assets/css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@gitlab.com/llws/server-side-render.git"
+    },
+    "dependencies": {
+        "node-sass": "^4.14.1"
+    },
+    "devDependencies": {},
+    "license": "ISC"
+}
