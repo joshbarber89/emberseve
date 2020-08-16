@@ -13,3 +13,9 @@
  *
  * @link: https://codeigniter4.github.io/CodeIgniter4/
  */
+
+function pr($data) {
+    echo '<pre>';
+        print_r($data);
+    echo '</pre>';
+}

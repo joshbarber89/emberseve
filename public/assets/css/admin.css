@@ -1,11 +1,54 @@
-body .dash-navigation {
+body .title-button {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row; }
-  body .dash-navigation .cta-btn a {
-    background-color: grey;
-    color: #000;
-    text-decoration: none;
-    padding: 20px;
-    font-size: 18px;
-    font-style: bold; }
+  justify-content: space-between;
+  align-items: center; }
+  body .title-button button {
+    max-height: 50px; }
+
+body h1 {
+  margin: 30px; }
+
+body .dash-container {
+  padding: 40px;
+  border: 1px solid #000;
+  border-radius: 10px; }
+  body .dash-container .dash-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; }
+    body .dash-container .dash-navigation .cta-btn {
+      padding: 10px; }
+      body .dash-container .dash-navigation .cta-btn a {
+        background-color: #D3D3D3;
+        color: #000;
+        text-decoration: none;
+        padding: 20px;
+        font-size: 18px;
+        font-style: bold;
+        display: inline-block;
+        border-radius: 10px;
+        width: 115px;
+        text-align: center;
+        border: 1px solid #000; }
+        body .dash-container .dash-navigation .cta-btn a:hover {
+          color: #fff;
+          border: 1px solid #000; }
+
+body .table {
+  border: 1px solid #000; }
+  body .table .tr {
+    display: flex; }
+    body .table .tr.tr-header .td {
+      font-size: 16px;
+      padding: 10px;
+      font-weight: bold; }
+    body .table .tr.tr-data .td {
+      padding: 10px;
+      border-top: 1px solid #000; }
+    body .table .tr .td {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      border-left: 1px solid #000; }
+      body .table .tr .td:first-child {
+        border-left: none; }

@@ -3,7 +3,7 @@
 use App\Models\UserModel;
 
 
-class Users extends AdminBaseController
+class UsersController extends AdminBaseController
 {
 	public function index()
 	{

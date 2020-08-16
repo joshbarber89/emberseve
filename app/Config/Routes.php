@@ -16,7 +16,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Users');
+$routes->setDefaultController('HomeController');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -37,7 +37,11 @@ $routes->match(['get','post'],'login', 'Admin/UsersController::index', ['filter'
 $routes->match(['get','post'],'register', 'Admin/UsersController::register', ['filter' => 'noauth']);
 $routes->match(['get','post'],'profile', 'Admin/UsersController::profile',['filter' => 'auth']);
 $routes->get('dashboard', 'Admin/DashboardController::index',['filter' => 'auth']);
+
 $routes->get('pages', 'Admin/PagesController::index',['filter' => 'auth']);
+$routes->get('create-page', 'Admin/PagesController::create',['filter' => 'auth']);
+$routes->get('edit-page', 'Admin/PagesController::edit',['filter' => 'auth']);
+
 $routes->get('menus', 'Admin/MenusController::index',['filter' => 'auth']);
 $routes->get('gallery', 'Admin/GalleriesController::index',['filter' => 'auth']);
 /**
