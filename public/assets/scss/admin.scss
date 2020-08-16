@@ -1,0 +1,17 @@
+body{
+    .dash-navigation {
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        .cta-btn {
+            a {
+                background-color: grey;
+                color: #000;
+                text-decoration: none;
+                padding: 20px;
+                font-size: 18px;
+                font-style: bold;
+            }
+        }
+    }
+}

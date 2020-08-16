@@ -30,13 +30,16 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index', ['filter' => 'noauth']);
-$routes->get('login', 'Users::index', ['filter' => 'noauth']);
-$routes->get('logout', 'Users::logout');
-$routes->match(['get','post'],'register', 'Users::register', ['filter' => 'noauth']);
-$routes->match(['get','post'],'profile', 'Users::profile',['filter' => 'auth']);
-$routes->get('dashboard', 'Dashboard::index',['filter' => 'auth']);
-
+$routes->get('/', 'HomeController::index', ['filter' => 'noauth']);
+$routes->get('login', 'Admin/UsersController::index', ['filter' => 'noauth']);
+$routes->get('logout', 'Admin/UsersController::logout');
+$routes->match(['get','post'],'login', 'Admin/UsersController::index', ['filter' => 'noauth']);
+$routes->match(['get','post'],'register', 'Admin/UsersController::register', ['filter' => 'noauth']);
+$routes->match(['get','post'],'profile', 'Admin/UsersController::profile',['filter' => 'auth']);
+$routes->get('dashboard', 'Admin/DashboardController::index',['filter' => 'auth']);
+$routes->get('pages', 'Admin/PagesController::index',['filter' => 'auth']);
+$routes->get('menus', 'Admin/MenusController::index',['filter' => 'auth']);
+$routes->get('gallery', 'Admin/GalleriesController::index',['filter' => 'auth']);
 /**
  * --------------------------------------------------------------------
  * Additional Routing

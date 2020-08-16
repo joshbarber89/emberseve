@@ -1,9 +1,9 @@
-<?php namespace App\Controllers;
+<?php namespace App\Controllers\Admin;
 
 use App\Models\UserModel;
 
 
-class Users extends BaseController
+class Users extends AdminBaseController
 {
 	public function index()
 	{
@@ -39,9 +39,9 @@ class Users extends BaseController
 			}
 		}
 
-		echo view('templates/header', $data);
+		echo view('admin/admin_templates/header', $data);
 		echo view('login');
-		echo view('templates/footer');
+		echo view('admin/admin_templates/footer');
 	}
 
 	private function setUserSession($user){
@@ -91,9 +91,9 @@ class Users extends BaseController
 		}
 
 
-		echo view('templates/header', $data);
+		echo view('admin/admin_templates/header', $data);
 		echo view('register');
-		echo view('templates/footer');
+		echo view('admin/admin_templates/footer');
 	}
 
 	public function profile(){
@@ -136,9 +136,9 @@ class Users extends BaseController
 		}
 
 		$data['user'] = $model->where('id', session()->get('id'))->first();
-		echo view('templates/header', $data);
-		echo view('profile');
-		echo view('templates/footer');
+		echo view('admin/admin_templates/header', $data);
+		echo view('admin/profile');
+		echo view('admin/admin_templates/footer');
 	}
 
 	public function logout(){
