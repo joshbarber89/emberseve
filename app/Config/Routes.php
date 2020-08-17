@@ -39,8 +39,12 @@ $routes->match(['get','post'],'profile', 'Admin/UsersController::profile',['filt
 $routes->get('dashboard', 'Admin/DashboardController::index',['filter' => 'auth']);
 
 $routes->get('pages', 'Admin/PagesController::index',['filter' => 'auth']);
-$routes->get('create-page', 'Admin/PagesController::create',['filter' => 'auth']);
-$routes->get('edit-page', 'Admin/PagesController::edit',['filter' => 'auth']);
+$routes->get('pages/create', 'Admin/PagesController::create',['filter' => 'auth']);
+$routes->get('pages/edit/(:num)', 'Admin/PagesController::edit',['filter' => 'auth']);
+$routes->get('pages/delete/(:num)', 'Admin/PagesController::delete',['filter' => 'auth']);
+$routes->match(['get','post'],'pages/create', 'Admin/PagesController::create',['filter' => 'auth']);
+$routes->match(['get','post'],'pages/edit/(:num)', 'Admin/PagesController::edit',['filter' => 'auth']);
+$routes->match(['get','post'],'pages/delete/(:num)', 'Admin/PagesController::delete',['filter' => 'auth']);
 
 $routes->get('menus', 'Admin/MenusController::index',['filter' => 'auth']);
 $routes->get('gallery', 'Admin/GalleriesController::index',['filter' => 'auth']);
